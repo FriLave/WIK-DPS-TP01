@@ -20,7 +20,7 @@ app.get('/ping', (req: Request, res : Response, next: NextFunction) => {
 });
 
 app.get('*', (req: Request, res : Response) => {
-    res.status(404)
+    res.status(404).end()
 })
 
 //Error Handler
