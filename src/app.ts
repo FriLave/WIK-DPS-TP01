@@ -11,6 +11,12 @@ dotenv.config();
 ======================================= */
 const app = express();
 
+// Print container ID
+app.use((req: Request, res: Response, next: NextFunction) => {
+    console.log('Container ID: ', require('os').hostname());
+    next();
+});
+
 app.get('/ping', (req: Request, res : Response, next: NextFunction) => {
     try {
         res.status(200).send(req.headers);
